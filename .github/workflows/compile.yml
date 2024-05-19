@@ -8,6 +8,8 @@ jobs:
 
   test_linux:
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -28,3 +30,21 @@ jobs:
           cd /work/gen/
           ls -hal
           ls -al sqlite3.c
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sqlcipher_amalgamation
+          path: /work/gen/*
+      - name: Upload to nightly release
+        uses: ncipollo/release-action@v1
+        if: github.ref == 'refs/heads/master'
+        with:
+          allowUpdates: true
+          tag: nightly
+          omitBodyDuringUpdate: true
+          omitNameDuringUpdate: true
+          prerelease: true
+          replacesArtifacts: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "/work/gen/*"
