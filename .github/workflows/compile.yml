@@ -1,0 +1,30 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+
+  test_linux:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install deps
+        run: |
+          sudo apt-get update && \
+          sudo DEBIAN_FRONTEND=noninteractive \
+          apt-get install -y --no-install-recommends \
+          ca-certificates \
+          sudo git
+
+      - name: generate amalgamation
+        run: |
+          sudo ./runme.sh
+
+      - name: check generated source
+        run: |
+          cd /work/gen/
+          ls -hal
+          ls -al sqlite3.c

@@ -1,6 +1,5 @@
 #! /bin/bash
 
-cd /work/
 mkdir -p /work/build/
 mkdir -p /work/gen/
 cd /work/build/
