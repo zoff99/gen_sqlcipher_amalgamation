@@ -7,7 +7,7 @@ apt-get update
 DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y openssl libssl-dev tclsh git autoconf gcc file pkgconf
 git clone https://github.com/sqlcipher/sqlcipher
 cd sqlcipher/
-git checkout "v4.5.7"
+git checkout "v4.6.0"
 ./configure  --disable-tcl --disable-shared --enable-static=yes --enable-tempstore=yes CFLAGS="-DSQLITE_HAS_CODEC -DSQLCIPHER_CRYPTO_OPENSSL"
 make sqlite3.c
 
