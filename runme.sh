@@ -3,7 +3,7 @@
 mkdir -p /work/build/
 mkdir -p /work/gen/
 cd /work/build/
-_SQLCIPHER_="v4.5.7"
+_SQLCIPHER_="v4.6.0"
 apt-get update
 DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y openssl libssl-dev tclsh git autoconf gcc file pkgconf
 git clone https://github.com/sqlcipher/sqlcipher
