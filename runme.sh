@@ -6,6 +6,7 @@ cd /work/build/
 _SQLCIPHER_="v4.6.0"
 apt-get update
 DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y openssl libssl-dev tclsh git autoconf gcc file pkgconf
+rm -Rf sqlcipher/
 git clone https://github.com/sqlcipher/sqlcipher
 cd sqlcipher/
 git checkout "$_SQLCIPHER_"
