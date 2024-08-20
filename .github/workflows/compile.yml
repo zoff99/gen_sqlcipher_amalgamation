@@ -45,8 +45,7 @@ jobs:
           cd /work/gen/
           ls -hal
           ls -al sqlite3.c
-          cd
-          cp -v /work/gen/* ./gen/
+          cp -v /work/gen/* /home/runner/work/gen_sqlcipher_amalgamation/gen_sqlcipher_amalgamation/gen/
 
       - name: check changes
         run: |
