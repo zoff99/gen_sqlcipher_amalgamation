@@ -40,9 +40,12 @@ jobs:
 
       - name: check generated source
         run: |
+          pwd
+          ls -al
           cd /work/gen/
           ls -hal
           ls -al sqlite3.c
+          cd
           cp -v /work/gen/* ./gen/
 
       - name: check changes
