@@ -43,6 +43,7 @@ jobs:
           cd /work/gen/
           ls -hal
           ls -al sqlite3.c
+          cp -v /work/gen/* ./gen/
 
       - name: check changes
         run: |
