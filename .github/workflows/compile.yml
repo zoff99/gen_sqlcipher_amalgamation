@@ -23,6 +23,7 @@ jobs:
     needs: [update-nightly-tag]
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
 
