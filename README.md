@@ -1,6 +1,6 @@
 ## sqlcipher amalgamation
 
-this tool will create sqlcipher amalgamation source to be used as a replacement for sqlite amalgamation
+this tool will create [sqlcipher](https://github.com/sqlcipher/sqlcipher) amalgamation source to be used as a replacement for sqlite amalgamation
 
 ### how to generate the amalgamation locally
 
