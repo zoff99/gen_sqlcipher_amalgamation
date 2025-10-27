@@ -61,7 +61,7 @@ jobs:
           title: 'update sqlcipher generated amalgamation'
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: sqlcipher_amalgamation
           path: /work/gen/*
